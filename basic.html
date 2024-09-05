@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript basics</title>
+</head>
+
+<body>
+    <h1>Javascript basics</h1>
+    <ul>
+        <li>Spring</li>
+        <li>Summer</li>
+        <li>Fall</li>
+        <li>Winter</li>
+    </ul>
+    <script>
+     
+      //12
+      /*
+      const primeNumber = (number=undefined) => {
+        if(number === undefined) return console.error("It is not a number");
+
+         if(typeof number !== "number") return console.warn("This is not a number");
+
+        if (number === 0) return console.error("The number cannot be 0");
+
+        if (number === 1) return console.error("The number cannot be 1");
+
+        if(Math.sign(number) === -1) return console.error("The number cannot be negative");
+
+        let divisible = false;
+
+        for(let i=2; i<number;i++){
+            if((number%i) === 0){
+                divisible=true;
+                break;
+            }
+        }
+
+        return (divisible)
+        ?console.log("The number is prime")
+        :console.log("The number is not prime")
+      }
+
+      primeNumber();
+      primeNumber("320");
+      primeNumber(-13);
+      primeNumber(200);*/
+
+      //13
+      /*
+      const evenNumber = (number = undefined) => {
+        if(number === undefined) return console.error("It is not a number");
+        if(typeof number !== "number") return console.warn("This is not a number");
+
+        return (number % 2 === 0)
+        ?console.log("The number is even")
+        :console.log("The number is odd")
+      }
+
+      evenNumber();
+      evenNumber("23");
+      evenNumber(-398);
+      evenNumber(19);
+      */
+
+      //14 
+      /*
+      const convertDegrees= (degrees=undefined, unity=undefined) => {
+        if(degrees === undefined) return console.warn("You did not enter degrees to convert")
+
+        if (typeof degrees !== "number") return console.error("The value entered is not a number");
+
+        if (unity === undefined) return console.warn("You did not enter the type of data to convert");
+        if (typeof unity !== "string") return console.error("The value entered is not a string")
+
+        if (unity.length !== 1 || !/(C|F)/.test(unity)) return console.warn("Invalid value");
+
+        if (unity == "C") {
+            return console.info("= " + Math.round((degrees * (9/5)) + 32) + " °F")
+        } else if (unity == "F") {
+            return console.info("= " + Math.round(((degrees -32) * (5/9)))+ " °C")
+        }else {
+            return console.error("Invalid value")
+        }
+
+      }
+
+      convertDegrees();
+      convertDegrees("2");
+      convertDegrees(2);
+      convertDegrees(2, true);
+      convertDegrees(2, "hiii");
+      convertDegrees(2, "E");
+      convertDegrees(2, "C");
+      convertDegrees(2, "F");
+      */  
+     //15
+
+     /*
+     const convertBinaryDecimal=(number=undefined, base = undefined) => {
+      if(number === undefined) return console.error("You did not enter the number to convert");
+      if(typeof number !== "number") return console.warn("This is not a number");
+      if(number === undefined) return console.error("You did not enter the base to convert");
+      if(typeof base !== "number") return console.warn("This is not a number");
+
+      if (base === 2){
+        return console.info(` ${number} base ${base} = ${parseInt(number, base)} 10 base`);
+      } else if (base === 10){
+        return console.info(` ${number} base ${base} = ${number.toString(base)} 10 base`)
+      } else {
+        return console.error("The number is not valid");
+      }
+     }
+
+     convertBinaryDecimal();
+     convertBinaryDecimal("2");
+     convertBinaryDecimal(100);
+     convertBinaryDecimal(100, "2");
+     convertBinaryDecimal(100, 2);
+     convertBinaryDecimal(4, 10);
+     */
+
+     //16
+     /*
+     const applyDiscount = (amount = undefined, discount = 0) => {
+      if(amount === undefined) return console.warn("Not entering the amount");
+      if(typeof amount !== "number") return console.warn("This is not a number");
+
+      if(amount === 0) return console.error("The amount cannot be 0");
+
+      if(Math.sign(amount) === -1) return console.error("The amount cannot be negative");
+
+      if(typeof discount !== "number") return console.error("This is not a number");
+      
+      if (Math.sign(discount) === -1) return console.error("The discount cannot be negative");
+
+      return console.info(` ${amount} - ${discount}% = ${amount - (amount*discount)/ 100}`);
+     }
+
+     applyDiscount();
+     applyDiscount("200");
+     applyDiscount(0);
+     applyDiscount(-1000);
+     applyDiscount(1000, "20");
+     applyDiscount(1000, -20);
+     applyDiscount(10000);
+     applyDiscount(1000, 25);
+     */
+
+     //17
+
+     /*
+     const calculateYears = (date = undefined, ) => {
+      if (date === undefined) return console.warn("You did not enter the date");
+
+      if (!(date instanceof Date)) return console.error("The value entered is not a valid date");
+
+      const todayLessDate = new Date().getTime() - date.getTime(), 
+      yearsToMS = 1000 * 60 * 60 * 24 * 365,
+      //*ex                               52 weeks
+      humanYears = Math.floor(todayLessDate/yearsToMS);
+
+      return (Math.sign(yearsToMS) === -1)
+        ? console.info(`${Math.abs(humanYears)} years left until ${date.getFullYear()}`)
+        : (Math.sign(humanYears)===1)
+        ? console.log(`Its been ${humanYears} since ${date.getFullYear()}`)
+        : console.info("We are in the current year") 
+      // 1000 = 1 seg * 60 min * 60 hour * 24 day 365 year
+      //MS = miliseconds
+     }
+
+     calculateYears()
+     calculateYears({})
+     calculateYears(new Date())
+     calculateYears(new Date(1984,4,23))
+     */
+
+     //18
+     /*
+     const countLetters = (s = "") => {
+      if (!s) return console.warn("You did not enter a string")
+      if(typeof s !== "string") return console.error("That is not a string")
+
+      let vowels = 0, consonants = 0;
+
+      s = s.toLocaleLowerCase()
+
+      for (let letter of s) {
+        if (/aeiou/.test(letter)) vowels++;
+        
+        if (/bcdfghjklmnpqrstvwxyz/.test(letter))consonants++;
+      }
+
+      return console.info({
+        s,
+        vowels,
+        consonants
+      })
+     }
+
+     countLetters();
+     countLetters(3);
+     countLetters("Hello");
+     */ 
+
+     //19
+     /*
+     const validateName = (name="") => {
+      if(!name) return console.warn("You did not enter a name");
+
+      if ( typeof name !== "string") return console.error("The value entered is not a string");
+
+      let regExp = /^[A-Za-zÑñáÉÍÓÚ\s]+$/g.test(name);
+
+      return (regExp)
+       ?console.info(`${name} is a valid name`)
+       :console.info(`${name} is not a valid name`)
+     }
+
+     validateName();
+     validateName(3);
+     validateName("Jonathan");
+     */
+
+     //20
+     /*
+     const validateEmail = (email="") => {
+      if(!email) return console.warn("You did not enter an email");
+
+      if ( typeof email !== "string") return console.error("The value entered is not a string");
+
+      let regExp = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+      return (regExp)
+       ?console.info(`${email} is a valid email`)
+       :console.info(`${email} is not a valid email`)
+     }
+
+     validateEmail()
+     validateEmail(34)
+     validateEmail("jon,mir,cha@gmail")
+     validateEmail("jonmircha@gmail.com")
+     */
+
+     /* Fusion 19-20*/
+     /*
+     const validatePattern = (s="", pattern = undefined) => {
+      if(!s) return console.warn("You did not enter a string");
+
+      if ( typeof s !== "string") return console.error("The value entered is not a string");
+
+      if(!pattern) return console.warn("You did not enter a pattern");
+
+      if (!pattern instanceof RegExp) return console.error("The value entered is not a string");
+
+      let regExp = pattern.test(s);
+
+      return (regExp)
+       ?console.info(`${s}, yes`)
+       :console.info(`${s}, no`)
+     }
+
+     validatePattern('Jonathan');
+     validatePattern('Jonathan', /^[A-Za-zÑñáÉÍÓÚ\s]+$/g);
+     validatePattern('Jon', new RegExp("/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+)*(\.[a-z]{2,15})/", "i"))
+     */  
+
+    //21
+    /*
+    const returnSquares = (arr = undefined) => {
+      if (arr === undefined) return console.warn("You did not enter an array")
+
+      if (!(arr instanceof Array)) return console.error("The value is not an array")
+
+      if(arr.length === 0) console.log("The array is empty")
+
+      for (let num of arr) {
+        if(typeof num !== "number") return console.error(`The value ${num} is not a number`)
+      }
+
+      const newArr = arr.map(el => el * el)
+
+      return console.info(`${arr} = ${newArr}`)
+    }
+
+    returnSquares();
+    returnSquares(true);
+    returnSquares({})
+    returnSquares([])
+    returnSquares([1,"3", 4, {}])
+    returnSquares([1,2,3,4])
+    */
+    //22
+
+    /*
+    const arrayMinMax = (arr=undefined) => {
+      if (arr === undefined) return console.warn("You did not enter an array")
+
+      if (!(arr instanceof Array)) return console.error("The value is not an array")
+
+      if(arr.length === 0) console.log("The array is empty")
+
+      for (let num of arr) {
+        if(typeof num !== "number") return console.error(`The value ${num} is not a number`)
+      }
+
+      return console.info(` ${arr}\n Mx ${Math.max(...arr)}, \n Min ${Math.min(...arr)}`)
+    }
+
+    arrayMinMax()
+    arrayMinMax(false)
+    arrayMinMax([])
+    arrayMinMax([2,3,true])
+    arrayMinMax([1,4,95,60])
+    */ 
+
+    //23 
+    const separateEvenOdd = (arr = undefined) => {
+      if (arr === undefined) return console.warn("You did not enter an array")
+
+      if (!(arr instanceof Array)) return console.error("The value is not an array")
+
+      if(arr.length === 0) console.log("The array is empty")
+
+      for (let num of arr) {
+        if(typeof num !== "number") return console.error(`The value ${num} is not a number`)
+      }
+
+      return console.info({
+        even: arr.filter(num => num%2 === 0),
+        odd: arr.filter(num => num%2 === 1)
+      }
+      )
+    }
+
+    separateEvenOdd()
+    separateEvenOdd("hola")
+    separateEvenOdd([])
+    separateEvenOdd([2,4,""])
+    separateEvenOdd([1,2,3,4,5,6,7,8,9])
+    </script>
+</body>
+
+</html>
